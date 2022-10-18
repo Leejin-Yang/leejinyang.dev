@@ -2,7 +2,7 @@ body,
 button,
 input,
 textarea {
-  font-family: Marcellus, 'Noto Serif KR', serif, 'Noto Sans', sans-serif;
+  font-family: 'Marcellus English', 'Noto Serif KR', serif, 'Noto Sans', sans-serif;
   font-feature-settings: 'tnum';
 }
 
@@ -14,4 +14,13 @@ input[type='number'] {
     margin: 0;
     -webkit-appearance: none;
   }
+}
+
+@font-face {
+  font-family: 'Marcellus English';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Marcellus'), url('https://fonts.gstatic.com/s/marcellus/v13/wEO_EBrOk8hQLDvIAF81VvoK_kgXiQ.woff2') format('woff2');
+  font-display: swap;
+  unicode-range: U+0041-005A, U+0061-007A;
 }
