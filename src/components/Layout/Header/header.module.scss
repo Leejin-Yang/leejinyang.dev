@@ -1,0 +1,17 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 20px;
+  border-bottom: 1px solid black;
+}
+
+.domain {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-decoration: underline;
+  transform: translate(-50%, -50%);
+}
