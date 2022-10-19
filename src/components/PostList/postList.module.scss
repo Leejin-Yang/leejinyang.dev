@@ -1,7 +1,18 @@
-.container {
+.container + .container {
+  border-top: 1px solid black;
+}
+
+.thumbnailList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  max-width: 800px;
+  padding: 20px;
   margin: 0 auto;
 }
 
-.container + .container {
-  border-top: 1px solid black;
+.postLink {
+  display: block;
+  width: 100%;
 }
