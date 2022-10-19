@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  height: 40px;
+  padding: 0 20px;
+  line-height: 40px;
+  border-bottom: 1px solid black;
+
+  p + p {
+    margin-left: 10px;
+  }
+}
