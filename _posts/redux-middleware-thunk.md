@@ -1,6 +1,7 @@
 ---
 title: Redux | middleware & thunk
 description: 리덕스 미들웨어와 thunk
+date: '2022-10-11'
 category: redux
 slug: redux-middleware-thunk
 ---

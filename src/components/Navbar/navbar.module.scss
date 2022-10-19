@@ -5,6 +5,11 @@
   line-height: 40px;
   border-bottom: 1px solid black;
 
+  p {
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
   p + p {
     margin-left: 10px;
   }

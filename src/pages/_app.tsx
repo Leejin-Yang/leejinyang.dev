@@ -1,14 +1,19 @@
 import '@/styles/globals.scss';
 
 import type { AppProps } from 'next/app';
+import { SWRConfig } from 'swr';
 
 import Layout from '@/components/Layout';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps<{ fallback: any }>) {
+  const { fallback } = pageProps;
+
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <SWRConfig value={{ fallback }}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SWRConfig>
   );
 }
 

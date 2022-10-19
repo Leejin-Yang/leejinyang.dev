@@ -4,16 +4,16 @@ import path from 'path';
 
 import type { Post } from '@/types/post';
 
-// type DataKeys = 'title' | 'date' | 'description' | 'thumbnail' | 'category' | 'slug';
-
+const MD_REGEX = /\.md$/;
 const postsDirectory = path.join(process.cwd(), '_posts');
 
-const getPostFileNames = () => {
+export const getPostFileNames = () => {
   return fs.readdirSync(postsDirectory);
 };
 
-const getPostByFileName = (fileName: string, fields: string[] = []) => {
-  const filePath = path.join(postsDirectory, fileName);
+export const getPostByFileName = (fileName: string, fields: string[] = []) => {
+  const filenameWithNoExtension = fileName.replace(MD_REGEX, '');
+  const filePath = path.join(postsDirectory, `${filenameWithNoExtension}.md`);
   const fileContent = fs.readFileSync(filePath, { encoding: 'utf-8' });
   const { data, content } = matter(fileContent);
 
@@ -39,7 +39,7 @@ export const getAllPosts = (fields: string[] = []) => {
 
   const posts = fileNames
     .map((fileName) => getPostByFileName(fileName, fields))
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1));
 
   return posts;
 };

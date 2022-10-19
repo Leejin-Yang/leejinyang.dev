@@ -1,16 +1,21 @@
+import useSWR from 'swr';
+
+import type { Post } from '@/types/post';
+
 import styles from './article.module.scss';
 import ContentBody from './ContentBody';
 
 interface Props {
-  content: string;
+  slug: string;
 }
 
-const Article = ({ content }: Props) => {
+const Article = ({ slug }: Props) => {
+  const { data: post } = useSWR<Post>(['posts', slug as string]);
+
   return (
     <article className={styles.container}>
-      <h3 className={styles.title}>제목</h3>
-      <time className={styles.date}>10.10.2022</time>
-      <ContentBody content={content} />
+      <time className={styles.date}>{post?.data.date}</time>
+      <ContentBody content={post?.content} />
     </article>
   );
 };

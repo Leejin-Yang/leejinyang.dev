@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header className={styles.container} ref={headerRef}>
-      <Link href='/blog'>Blog</Link>
+      <Link href='/'>Blog</Link>
       <Link href='/' passHref>
         <a href='replace' className={styles.domain}>
           Domain

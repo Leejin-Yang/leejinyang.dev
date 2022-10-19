@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   max-width: 800px;
   padding: 20px;
   margin: 0 auto;
@@ -9,14 +10,9 @@
   }
 }
 
-.title {
-  height: 60px;
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 60px;
-}
-
 .date {
+  position: absolute;
+  right: 20px;
   margin-bottom: 20px;
   font-size: 14px;
 }

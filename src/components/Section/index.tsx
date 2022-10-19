@@ -1,19 +1,19 @@
-// import Title from '../Title';
+import Link from 'next/link';
+import useSWR from 'swr';
+
 import type { Post } from '@/types/post';
 
-import Article from '../Article';
 import styles from './section.module.scss';
 
-interface Props {
-  posts: Post[];
-}
+const Section = () => {
+  const { data: posts } = useSWR<Post[]>(['posts']);
 
-const Section = ({ posts }: Props) => {
   return (
     <section className={styles.container}>
-      {/* <Title title='Reframe, Rearrange, Repeat' /> */}
-      {posts?.map(({ data, content }) => (
-        <Article key={data.slug} content={content} />
+      {posts?.map((post) => (
+        <Link href={`/blog/${post?.slug}`} key={post.slug}>
+          {post?.title}
+        </Link>
       ))}
     </section>
   );
