@@ -2,14 +2,14 @@ import useSWR from 'swr';
 
 import type { Post } from '@/types/post';
 
-import styles from './article.module.scss';
 import ContentBody from './ContentBody';
+import styles from './postContent.module.scss';
 
 interface Props {
   slug: string;
 }
 
-const Article = ({ slug }: Props) => {
+const PostContent = ({ slug }: Props) => {
   const { data: post } = useSWR<Post>(['posts', slug as string]);
 
   return (
@@ -20,4 +20,4 @@ const Article = ({ slug }: Props) => {
   );
 };
 
-export default Article;
+export default PostContent;

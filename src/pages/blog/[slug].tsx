@@ -2,8 +2,8 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import useSWR, { unstable_serialize as unstableSerialize } from 'swr';
 
-import Article from '@/components/Article';
 import Navbar from '@/components/Navbar';
+import PostContent from '@/components/PostContent';
 import Title from '@/components/Title';
 import { getPostByFileName, getPostFileNames } from '@/lib/posts';
 import type { Post } from '@/types/post';
@@ -18,7 +18,7 @@ const PostPage = () => {
     <>
       <Navbar category={post?.data.category} title={post?.data.title} />
       <Title title={post?.data.title} />
-      <Article slug={slug as string} />
+      <PostContent slug={slug as string} />
     </>
   );
 };

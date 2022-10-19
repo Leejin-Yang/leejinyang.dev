@@ -3,9 +3,9 @@ import useSWR from 'swr';
 
 import type { Post } from '@/types/post';
 
-import styles from './section.module.scss';
+import styles from './postList.module.scss';
 
-const Section = () => {
+const PostList = () => {
   const { data: posts } = useSWR<Post[]>(['posts']);
 
   return (
@@ -19,4 +19,4 @@ const Section = () => {
   );
 };
 
-export default Section;
+export default PostList;
