@@ -19,7 +19,7 @@
       "@/components/*": ["components/*"],
       "@/lib/*": ["lib/*"],
       "@/hooks/*": ["hooks/*"],
-      "@/types/*": ["utils/*"],
+      "@/types/*": ["types/*"],
       "@/styles/*": ["styles/*"],
       "@/assets/*": ["assets/*"],
     }
