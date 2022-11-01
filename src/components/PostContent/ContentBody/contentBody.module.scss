@@ -3,6 +3,7 @@
   white-space: pre-line;
 
   p {
+    font-weight: 300;
     line-height: 2;
   }
 
@@ -17,36 +18,36 @@
 
   h1 {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 400;
   }
 
   h2 {
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   h3 {
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   h4 {
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 300;
   }
 
   h5 {
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 300;
   }
 
   h6 {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 300;
   }
 
   strong {
-    font-weight: 600;
+    font-weight: 500;
   }
 
   em {
@@ -61,36 +62,53 @@
     background-color: yellow;
   }
 
+  a {
+    color: blue;
+
+    :hover {
+      color: blue;
+    }
+  }
+
   blockquote {
-    position: relative;
     padding: 0 16px;
     background-color: gray;
-    border-left: 10px solid red;
+    border-left: 8px solid red;
+    border-radius: 8px;
   }
 
   ul,
   ol {
+    position: relative;
+    left: 12px;
     padding-left: 16px;
     margin-top: 0;
     margin-bottom: 0;
     white-space: normal;
-    list-style-type: disc;
-  }
-
-  ol ol,
-  ul ol {
-    list-style-type: lower-roman;
-  }
-
-  ul ul ol,
-  ul ol ol,
-  ol ul ol,
-  ol ol ol {
-    list-style-type: lower-alpha;
   }
 
   li {
+    font-weight: 300;
     line-height: 2;
-    list-style-position: inside;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  pre,
+  code {
+    font-family: Menlo, Monaco, 'Courier New', monospace !important;
+  }
+
+  pre {
+    overflow-x: scroll;
+    font-size: 14px;
+  }
+
+  code {
+    padding: 2px;
+    background-color: yellow;
+    border-radius: 4px;
   }
 }

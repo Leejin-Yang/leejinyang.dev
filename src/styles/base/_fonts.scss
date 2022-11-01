@@ -1,8 +1,10 @@
+@import '//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css';
+
 body,
 button,
 input,
 textarea {
-  font-family: 'Cormorant Garamond English', 'Noto Serif KR', serif, 'Noto Sans', sans-serif;
+  font-family: 'Spoqa Han Sans Neo', Arial, PingFangSC-Regular, 'Microsoft YaHei', sans-serif;
   font-feature-settings: 'tnum';
 }
 
@@ -14,96 +16,4 @@ input[type='number'] {
     margin: 0;
     -webkit-appearance: none;
   }
-}
-
-/* italic */
-@font-face {
-  font-family: 'Cormorant Garamond English';
-  font-style: italic;
-  font-weight: 300;
-  src: local('Cormorant Garamond'), url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3WmX5slCNuHLi8bLeY9MK7whWMhyjYrEPjuz-KzhOp_D95.woff2') format('woff2');
-  font-display: swap;
-  unicode-range: U+0041-005A, U+0061-007A;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond English';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Cormorant Garamond'), url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3ZmX5slCNuHLi8bLeY9MK7whWMhyjYrEtImSqn7B6D.woff2') format('woff2');
-  font-display: swap;
-  unicode-range: U+0041-005A, U+0061-007A;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond English';
-  font-style: italic;
-  font-weight: 500;
-  src: local('Cormorant Garamond'), url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3WmX5slCNuHLi8bLeY9MK7whWMhyjYrEO7uj-KzhOp_D95.woff2') format('woff2');
-  font-display: swap;
-  unicode-range: U+0041-005A, U+0061-007A;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond English';
-  font-style: italic;
-  font-weight: 600;
-  src: local('Cormorant Garamond'), url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3WmX5slCNuHLi8bLeY9MK7whWMhyjYrEOXvT-KzhOp_D95.woff2') format('woff2');
-  font-display: swap;
-  unicode-range: U+0041-005A, U+0061-007A;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond English';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Cormorant Garamond'), url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3WmX5slCNuHLi8bLeY9MK7whWMhyjYrEPzvD-KzhOp_D95.woff2') format('woff2');
-  font-display: swap;
-  unicode-range: U+0041-005A, U+0061-007A;
-}
-
-/* normal */
-@font-face {
-  font-family: 'Cormorant Garamond English';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Cormorant Garamond'), url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjQAllfvg-IxBSL_g.woff2') format('woff2');
-  font-display: swap;
-  unicode-range: U+0041-005A, U+0061-007A;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond English';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Cormorant Garamond'), url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtKky2F7g.woff2') format('woff2');
-  font-display: swap;
-  unicode-range: U+0041-005A, U+0061-007A;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond English';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Cormorant Garamond'), url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjQWlhfvg-IxBSL_g.woff2') format('woff2');
-  font-display: swap;
-  unicode-range: U+0041-005A, U+0061-007A;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond English';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Cormorant Garamond'), url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjQdl9fvg-IxBSL_g.woff2') format('woff2');
-  font-display: swap;
-  unicode-range: U+0041-005A, U+0061-007A;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond English';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Cormorant Garamond'), url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjQEl5fvg-IxBSL_g.woff2') format('woff2');
-  font-display: swap;
-  unicode-range: U+0041-005A, U+0061-007A;
 }

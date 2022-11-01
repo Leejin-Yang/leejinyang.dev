@@ -1,7 +1,7 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { cb } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { prism } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 import styles from './contentBody.module.scss';
 
@@ -18,7 +18,7 @@ const customComponents = {
 
       return (
         <div className={styles.image}>
-          <Image src={image.properties.src} alt={image.alt} width={600} height={600} />
+          <img src={image.properties.src} alt={image.alt} />
         </div>
       );
     }
@@ -26,12 +26,20 @@ const customComponents = {
     return <p>{paragraph.children}</p>;
   },
 
+  a(anchor: any) {
+    return (
+      <a href={anchor.href} target='_blank' rel='noopener noreferrer'>
+        {anchor.children}
+      </a>
+    );
+  },
+
   code(code: any) {
     const { className, children, ...props } = code;
     const language = /language-(\w+)/.exec(className || ''); // language-tsx => tsx
 
     return language ? (
-      <SyntaxHighlighter style={cb} language={language[1]} {...props}>
+      <SyntaxHighlighter style={prism} language={language[1]} {...props}>
         {String(children).replace(/\n$/, '')}
       </SyntaxHighlighter>
     ) : (
