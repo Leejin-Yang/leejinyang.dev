@@ -1,5 +1,7 @@
+@use '@/styles/constants/colors' as c;
+
 .container + .container {
-  border-top: 1px solid black;
+  border-top: 1px solid c.$BORDER_PRIMARY;
 }
 
 .thumbnailList {

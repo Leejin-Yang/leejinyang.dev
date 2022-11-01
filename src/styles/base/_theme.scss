@@ -1,0 +1,6 @@
+@use '@/styles/constants/colors' as c;
+
+body {
+  color: c.$TEXT_PRIMARY;
+  background-color: c.$BG_PRIMARY;
+}

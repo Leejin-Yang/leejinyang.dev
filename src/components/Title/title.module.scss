@@ -1,3 +1,5 @@
+@use '@/styles/constants/colors' as c;
+
 .title {
   height: 100px;
   font-size: 45px;
@@ -5,7 +7,7 @@
   line-height: 100px;
   text-align: center;
   text-transform: capitalize;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid c.$BORDER_PRIMARY;
 }
 
 .main {

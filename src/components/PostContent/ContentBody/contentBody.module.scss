@@ -1,3 +1,5 @@
+@use '@/styles/constants/colors' as c;
+
 .container {
   margin: 40px 0;
   white-space: pre-line;
@@ -59,22 +61,23 @@
   }
 
   mark {
-    background-color: yellow;
+    background-color: c.$BG_ELEMENT;
   }
 
   a {
-    color: blue;
+    color: c.$PRIMARY;
+    border-bottom: 1px solid c.$BORDER_PRIMARY;
 
     :hover {
-      color: blue;
+      color: c.$PRIMARY;
     }
   }
 
   blockquote {
     padding: 0 16px;
-    background-color: gray;
-    border-left: 8px solid red;
-    border-radius: 8px;
+    background-color: c.$BG_ELEMENT;
+    border-left: 4px solid c.$PRIMARY;
+    border-radius: 4px;
   }
 
   ul,
@@ -106,9 +109,11 @@
     font-size: 14px;
   }
 
-  code {
-    padding: 2px;
-    background-color: yellow;
+  p code,
+  li code {
+    padding: 1px 2px;
+    white-space: pre-wrap;
+    border: 1px solid c.$BORDER_SECONDARY;
     border-radius: 4px;
   }
 }
