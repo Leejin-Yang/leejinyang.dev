@@ -16,7 +16,7 @@ const PostList = () => {
       <ul className={styles.thumbnailList}>
         {posts?.map((post) => (
           <li key={post.slug}>
-            <Link href={`/blog/${post?.slug}`} passHref>
+            <Link href={`/blog/${post?.slug}`} passHref legacyBehavior>
               <a href='replace' className={styles.postLink}>
                 <PostThumbnail post={post} />
               </a>

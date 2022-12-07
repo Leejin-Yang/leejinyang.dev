@@ -11,7 +11,7 @@ interface Props {
 const PostThumbnail = ({ post }: Props) => {
   return (
     <div className={styles.container}>
-      <Image src={post.thumbnail} alt={post.title} width={360} height={270} layout='intrinsic' />
+      <Image src={post.thumbnail} alt={post.title} width={360} height={270} />
       <div className={styles.postData}>
         <div className={styles.metaData}>
           <span>{post.date}</span>

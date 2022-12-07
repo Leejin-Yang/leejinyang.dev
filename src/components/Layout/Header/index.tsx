@@ -10,11 +10,11 @@ const Header = () => {
   return (
     <header className={styles.container} ref={headerRef}>
       <Link href='/'>Blog</Link>
-      <Link href='/' passHref>
-        <a href='replace' className={styles.domain}>
+      <div className={styles.domain}>
+        <Link href='/' passHref>
           Domain
-        </a>
-      </Link>
+        </Link>
+      </div>
       <Search />
     </header>
   );
