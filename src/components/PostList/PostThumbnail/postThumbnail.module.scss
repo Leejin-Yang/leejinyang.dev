@@ -15,6 +15,7 @@
 }
 
 .metaData {
+  margin-bottom: 8px;
   font-size: 14px;
 
   span {
@@ -28,13 +29,13 @@
 }
 
 .title {
-  height: 40px;
-  font-size: 20px;
+  height: 30px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 40px;
+  line-height: 30px;
   text-transform: capitalize;
 }
 
 .desc {
-  line-height: 1.8;
+  line-height: 2;
 }
