@@ -12,7 +12,7 @@ const Header = () => {
       <Link href='/'>Blog</Link>
       <div className={styles.domain}>
         <Link href='/' passHref>
-          Domain
+          leejinyang.dev
         </Link>
       </div>
       <Search />
