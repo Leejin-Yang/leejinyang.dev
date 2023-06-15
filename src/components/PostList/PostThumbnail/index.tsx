@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { handleImageError } from 'utils/image';
 
 import type { Post } from '@/types/post';
 
@@ -11,7 +12,14 @@ interface Props {
 const PostThumbnail = ({ post }: Props) => {
   return (
     <div className={styles.container}>
-      <Image src={post.thumbnail} alt={post.title} width={360} height={270} />
+      <Image
+        className={styles.thumbnailImage}
+        src={post.thumbnail}
+        alt={post.title}
+        width={640}
+        height={280}
+        onError={handleImageError}
+      />
       <div className={styles.postData}>
         <div className={styles.metaData}>
           <span>{post.date}</span>

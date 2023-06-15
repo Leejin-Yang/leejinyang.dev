@@ -8,7 +8,7 @@ import { getAllPosts } from '@/lib/posts';
 const Home = () => {
   return (
     <>
-      <Title title='Dev Blog' main />
+      <Title title='All Posts' main />
       <PostList />
     </>
   );

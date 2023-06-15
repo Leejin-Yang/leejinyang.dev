@@ -3,7 +3,6 @@ import useSWR from 'swr';
 
 import type { Post } from '@/types/post';
 
-import Title from '../Title';
 import styles from './postList.module.scss';
 import PostThumbnail from './PostThumbnail';
 
@@ -12,7 +11,6 @@ const PostList = () => {
 
   return (
     <section className={styles.container}>
-      <Title title='Refresh' />
       <ul className={styles.thumbnailList}>
         {posts?.map((post) => (
           <li key={post.slug}>
