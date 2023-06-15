@@ -5,14 +5,16 @@
 }
 
 .thumbnailList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  max-width: 800px;
-  padding: 20px;
   margin: 0 auto;
   list-style: none;
+
+  li {
+    padding: 20px 12px 0;
+  }
+
+  li + li {
+    border-top: 1px solid c.$BORDER_PRIMARY;
+  }
 }
 
 .postLink {
