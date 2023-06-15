@@ -1,7 +1,7 @@
 ---
 title: Redux | middleware & thunk
 description: 리덕스 미들웨어와 thunk
-date: '2022-10-11'
+date: '2022/10/11'
 category: redux
 slug: redux-middleware-thunk
 ---
@@ -13,8 +13,8 @@ slug: redux-middleware-thunk
 _Redux Middleware는 side effect가 발생하는 로직을 작성할 수 있도록 설계되었다._
 
 ```tsx
-type MiddlewareAPI = { dispatch: Dispatch; getState: () => State }
-type Middleware = (api: MiddlewareAPI) => (next: Dispatch) => Dispatch
+type MiddlewareAPI = { dispatch: Dispatch; getState: () => State };
+type Middleware = (api: MiddlewareAPI) => (next: Dispatch) => Dispatch;
 ```
 
 Redux Middleware는 콘솔을 찍거나, 비동기 타이머, 비동기 API 호출 등 여러가지 작업을 할 수 있다. Action의 정보를 가로채 정보에 따라 특정 작업을 수행한 뒤 reducer에게 전달해주거나 정보에 따라 아예 무시할 수 있다. middleware를 다음과 같은 형태로 정의할 수 있다.
@@ -30,9 +30,9 @@ function exampleMiddleware(storeAPI) {
       // or restart the pipeline with storeAPI.dispatch(action)
       // Can also use storeAPI.getState() here
 
-      return next(action)
-    }
-  }
+      return next(action);
+    };
+  };
 }
 
 // 화살표 함수로 표현시
@@ -40,8 +40,8 @@ function exampleMiddleware(storeAPI) {
 const anotherExampleMiddleware = (storeAPI) => (next) => (action) => {
   // Do something in here, when each action is dispatched
 
-  return next(action)
-}
+  return next(action);
+};
 
 // 출처 https://redux.js.org/tutorials/fundamentals/part-4-store
 ```
@@ -56,15 +56,15 @@ _여러 로직을 수행 후 next(action)으로 action을 넘기는 것을 기�
 
 ```jsx
 const loggerMiddleware = (storeAPI) => (next) => (action) => {
-  console.log('current state', storeAPI.getState())
-  console.log('dispatching', action)
-  let result = next(action) // action을 다음 middleware나 reducer로 전달한다.
-  console.log('next state', storeAPI.getState()) // action 처리 후 state 값을 가져온다.
-  return result // result는 store.dispatch(action)이 적용된 결과를 가진다.
-}
+  console.log('current state', storeAPI.getState());
+  console.log('dispatching', action);
+  let result = next(action); // action을 다음 middleware나 reducer로 전달한다.
+  console.log('next state', storeAPI.getState()); // action 처리 후 state 값을 가져온다.
+  return result; // result는 store.dispatch(action)이 적용된 결과를 가진다.
+};
 
 // middleware를 적용할 때, store 생성 시 applyMiddleware를 추가하면 된다.
-const store = createStore(rootReducer, applyMiddleware(loggerMiddleware))
+const store = createStore(rootReducer, applyMiddleware(loggerMiddleware));
 ```
 
 ## Redux-Thunk
@@ -74,12 +74,12 @@ redux-thunk는 middleware로 action 대신 함수를 반환하는 action creator
 thunk 사용 방법
 
 ```jsx
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from 'redux';
 // thunk를 redux-thunk에서 import
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
 
 // middleware 추가
-const store = createStore(modules, applyMiddleware(thunk))
+const store = createStore(modules, applyMiddleware(thunk));
 ```
 
 thunk middleware 구현 코드를 보면 다음과 같다.
@@ -96,12 +96,12 @@ const thunkMiddleware =
     // If the "action" is actually a function instead...
     if (typeof action === 'function') {
       // then call the function and pass `dispatch` and `getState` as arguments
-      return action(dispatch, getState)
+      return action(dispatch, getState);
     }
 
     // Otherwise, it's a normal action - send it onwards
-    return next(action)
-  }
+    return next(action);
+  };
 ```
 
 action의 타입이 함수인 경우 dispatch와 getState를 받아 action을 실행한다. 아닌 경우 action을 다음 middleware나 reducer로 넘겨준다.
@@ -112,14 +112,14 @@ thunk 함수 예시
 function fetchData() {
   return async (dispatch, getState) => {
     // 비동기 API 호출
-    const response = await axios.get('.../data')
+    const response = await axios.get('.../data');
 
     // 비동기 작업이 마치고 dispatch
-    dispatch({ type: 'FETCH_DATA', payload: response.data })
-  }
+    dispatch({ type: 'FETCH_DATA', payload: response.data });
+  };
 }
 
-store.dispatch(fetchData())
+store.dispatch(fetchData());
 ```
 
 함수로 받은 경우 함수 실행 → 비동기 작업 후 dispatch 실행 → action 타입 체크 → 함수가 아닌 경우 next(action)을 실행
@@ -131,31 +131,29 @@ Promise.then().catch()나 try/catch 구문으로 에러 처리를 할 수 있다
 ```jsx
 function fetchData(someValue) {
   return async (dispatch, getState) => {
-    dispatch(requestStarted())
+    dispatch(requestStarted());
 
     // Have to declare the response variable outside the try block
-    let response
+    let response;
 
     try {
-      response = await myAjaxLib.post('/someEndpoint', { data: someValue })
+      response = await myAjaxLib.post('/someEndpoint', { data: someValue });
     } catch (error) {
       // Ensure we only catch network errors
-      dispatch(requestFailed(error.message))
+      dispatch(requestFailed(error.message));
       // Bail out early on failure
-      return
+      return;
     }
 
     // We now have the result and there's no error. Dispatch "fulfilled".
-    dispatch(requestSucceeded(response.data))
-  }
+    dispatch(requestSucceeded(response.data));
+  };
 }
 ```
 
 기존 Redux 흐름에서 middleware가 추가된 다이어그램이다.
 
-![redux-async-data-flow](/assets/img/redux-async-data-flow.gif)
-
-<br>
+![redux-async-data-flow](/images/redux/redux-middleware-thunk/redux-async-data-flow.gif)
 
 ## 결론
 
@@ -166,8 +164,6 @@ function fetchData(someValue) {
 
 Redux Toolkit에는 기본적으로 thunk가 내장되어 있다. 추가 라이브러리 설치 없이 이용할 수 있다.
 _Redux를 사용해야 한다면 Redux Toolkit을 사용하자_
-
-<br>
 
 ## Reference
 
