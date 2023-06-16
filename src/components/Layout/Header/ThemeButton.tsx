@@ -1,17 +1,18 @@
 import React from 'react';
 
 import { DarkModeIcon, LightModeIcon } from '@/assets/svgs';
+import { THEMES } from '@/constants/theme';
 import useTheme from '@/hooks/useTheme';
 
 import styles from './themeButton.module.scss';
 
-const THEME_OPTION = {
+export const themeOptions = {
   light: {
-    value: 'light',
+    value: THEMES.LIGHT,
     icon: <LightModeIcon />,
   },
   dark: {
-    value: 'dark',
+    value: THEMES.DARK,
     icon: <DarkModeIcon />,
   },
 } as const;
@@ -23,10 +24,10 @@ const ThemeButton = () => {
     <button
       type='button'
       className={styles.button}
-      value={THEME_OPTION[theme].value}
+      value={themeOptions[theme].value}
       onClick={changeTheme}
     >
-      {THEME_OPTION[theme].icon}
+      {themeOptions[theme].icon}
     </button>
   );
 };

@@ -5,7 +5,7 @@ import { ThemeValueContext } from '@/contexts/ThemeContext';
 const useThemeValue = () => {
   const theme = useContext(ThemeValueContext);
 
-  if (theme === null) {
+  if (theme === undefined || theme === null) {
     throw new Error('useThemeValue must be used in ThemeProvider');
   }
 
