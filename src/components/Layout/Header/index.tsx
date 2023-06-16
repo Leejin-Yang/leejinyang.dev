@@ -14,6 +14,9 @@ const Header = () => {
           leejinyang.dev
         </Link>
         <div className={styles.tabMenus}>
+          <Link href='https://leejinyang.com' target='_blank' rel='noopener noreferrer'>
+            Portfolio
+          </Link>
           <ThemeButton />
         </div>
       </div>
