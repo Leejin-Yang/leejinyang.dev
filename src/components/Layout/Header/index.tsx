@@ -7,11 +7,14 @@ const Header = () => {
   const headerRef = useRef<HTMLElement>(null);
 
   return (
-    <header className={styles.container} ref={headerRef}>
-      <div className={styles.domain}>
+    <header className={styles.header} ref={headerRef}>
+      <div className={styles.container}>
         <Link href='/' passHref>
           leejinyang.dev
         </Link>
+        <div className={styles.tabMenus}>
+          <button type='button'>다크모드</button>
+        </div>
       </div>
     </header>
   );
