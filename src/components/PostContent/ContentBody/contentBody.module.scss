@@ -61,12 +61,12 @@
   }
 
   mark {
-    background-color: c.$BG_ELEMENT;
+    background-color: var(--background-element);
   }
 
   a {
     color: c.$PRIMARY;
-    border-bottom: 1px solid c.$BORDER_PRIMARY;
+    border-bottom: 1px solid var(--border1);
 
     :hover {
       color: c.$PRIMARY;
@@ -75,7 +75,7 @@
 
   blockquote {
     padding: 0 16px;
-    background-color: c.$BG_ELEMENT;
+    background-color: var(--background-element);
     border-left: 4px solid c.$PRIMARY;
     border-radius: 4px;
   }
@@ -113,7 +113,7 @@
   li code {
     padding: 1px 2px;
     white-space: pre-wrap;
-    border: 1px solid c.$BORDER_SECONDARY;
+    border: 1px solid var;
     border-radius: 4px;
   }
 }

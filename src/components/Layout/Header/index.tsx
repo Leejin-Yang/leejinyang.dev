@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRef } from 'react';
 
 import styles from './header.module.scss';
+import ThemeButton from './ThemeButton';
 
 const Header = () => {
   const headerRef = useRef<HTMLElement>(null);
@@ -13,7 +14,7 @@ const Header = () => {
           leejinyang.dev
         </Link>
         <div className={styles.tabMenus}>
-          <button type='button'>다크모드</button>
+          <ThemeButton />
         </div>
       </div>
     </header>

@@ -1,5 +1,6 @@
 import '@/styles/globals.scss';
 
+import ThemeProvider from 'contexts/ThemeContext';
 import type { AppProps } from 'next/app';
 import { SWRConfig } from 'swr';
 
@@ -10,9 +11,11 @@ function MyApp({ Component, pageProps }: AppProps<{ fallback: any }>) {
 
   return (
     <SWRConfig value={{ fallback }}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ThemeProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
     </SWRConfig>
   );
 }

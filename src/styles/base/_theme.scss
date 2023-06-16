@@ -1,6 +1,41 @@
 @use '@/styles/constants/colors' as c;
 
+:root {
+  --background-primary: #f8f9fa;
+  --background-element: #fafafa;
+  --text1: #212529;
+  --border1: #343a40;
+  --border2: #adb5bd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-primary: #121212;
+    --background-element: #fafafa;
+    --text1: #ececec;
+    --border1: #e0e0e0;
+    --border2: #a0a0a0;
+  }
+}
+
+:root[background-theme='light'] {
+  --background-primary: #f8f9fa;
+  --background-element: #fafafa;
+  --text1: #212529;
+  --border1: #343a40;
+  --border2: #adb5bd;
+}
+
+:root[background-theme='dark'] {
+  --background-primary: #121212;
+  --background-element: #fafafa;
+  --text1: #ececec;
+  --border1: #e0e0e0;
+  --border2: #a0a0a0;
+}
+
 body {
-  color: c.$TEXT_PRIMARY;
-  background-color: c.$BG_PRIMARY;
+  color: var(--text1);
+  background-color: var(--background-primary);
+  transition: background 0.2s ease-in 0s;
 }
