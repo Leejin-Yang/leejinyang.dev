@@ -1,15 +1,16 @@
 import React from 'react';
 
+import { DarkModeIcon, LightModeIcon } from '@/assets/svgs';
 import useTheme from '@/hooks/useTheme';
 
 const THEME_OPTION = {
   light: {
     value: 'light',
-    label: '라이트모드',
+    icon: <LightModeIcon />,
   },
   dark: {
     value: 'dark',
-    label: '다크모드',
+    icon: <DarkModeIcon />,
   },
 } as const;
 
@@ -18,7 +19,7 @@ const ThemeButton = () => {
 
   return (
     <button type='button' value={THEME_OPTION[theme].value} onClick={changeTheme}>
-      {THEME_OPTION[theme].label}
+      {THEME_OPTION[theme].icon}
     </button>
   );
 };
