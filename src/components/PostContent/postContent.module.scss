@@ -1,11 +1,9 @@
-@use '@/styles/constants/colors' as c;
-
 .container {
   position: relative;
   max-width: 800px;
   padding: 20px;
   margin: 0 auto;
-  border-bottom: 1px solid c.$BORDER_PRIMARY;
+  border-bottom: 1px solid var(--border1);
 
   &:last-of-type {
     border: none;

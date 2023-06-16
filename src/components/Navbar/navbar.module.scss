@@ -1,11 +1,9 @@
-@use '@/styles/constants/colors' as c;
-
 .container {
   display: flex;
   height: 40px;
   padding: 0 20px;
   line-height: 40px;
-  border-bottom: 1px solid c.$BORDER_PRIMARY;
+  border-bottom: 1px solid var(--border1);
 
   p {
     font-weight: 400;

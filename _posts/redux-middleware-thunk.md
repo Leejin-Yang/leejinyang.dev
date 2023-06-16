@@ -2,7 +2,7 @@
 title: Redux | middleware & thunk
 description: 리덕스 미들웨어와 thunk
 date: '2022/10/11'
-thumbnail: 'images/redux/redux-middleware-thunk/thumbnail.png'
+thumbnail: '/images/redux/redux-middleware-thunk/thumbnail.png'
 category: redux
 slug: redux-middleware-thunk
 ---
