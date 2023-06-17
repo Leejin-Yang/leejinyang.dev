@@ -1,6 +1,7 @@
 import type { GetStaticProps } from 'next';
 import { unstable_serialize as unstableSerialize } from 'swr';
 
+import CustomHead from '@/components/CustomHead';
 import PostList from '@/components/PostList';
 import Title from '@/components/Title';
 import { getAllPosts } from '@/lib/posts';
@@ -8,6 +9,7 @@ import { getAllPosts } from '@/lib/posts';
 const Home = () => {
   return (
     <>
+      <CustomHead />
       <Title title='All Posts' main />
       <PostList />
     </>

@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import useSWR, { unstable_serialize as unstableSerialize } from 'swr';
 
+import CustomHead from '@/components/CustomHead';
 import Navbar from '@/components/Navbar';
 import PostContent from '@/components/PostContent';
 import Title from '@/components/Title';
@@ -16,6 +17,7 @@ const PostPage = () => {
 
   return (
     <>
+      <CustomHead post={post} />
       <Navbar category={post?.data.category} title={post?.data.title} />
       <Title title={post?.data.title} />
       <PostContent slug={slug as string} />
